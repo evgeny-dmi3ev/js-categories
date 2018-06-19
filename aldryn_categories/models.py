@@ -79,6 +79,11 @@ class Category(TranslatedAutoSlugifyMixin, TranslationHelperMixin,
             blank=True,
             default='',
         ),
+        no_url=models.BooleanField(
+            _('no url'),
+            blank=True,
+            default=False,
+        ),
         meta={'unique_together': (('language_code', 'slug', ), )}
     )
 

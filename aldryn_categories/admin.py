@@ -21,6 +21,7 @@ class CategoryAdmin(TranslatableAdmin, TreeAdmin):
                 'summary',
                 'image',
                 'link',
+                'no_url',
             )
         }),
         (' ', {
