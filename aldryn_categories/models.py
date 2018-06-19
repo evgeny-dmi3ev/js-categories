@@ -9,6 +9,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from aldryn_translation_tools.models import (
     TranslatedAutoSlugifyMixin, TranslationHelperMixin)
+from filer.fields.image import FilerImageField
 from parler import appsettings
 from parler.managers import TranslatableManager, TranslatableQuerySet
 from parler.models import TranslatableModel, TranslatedFields
@@ -63,6 +64,20 @@ class Category(TranslatedAutoSlugifyMixin, TranslationHelperMixin,
             help_text=_('Provide a “slug” or leave blank for an automatically '
                         'generated one.'),
             max_length=255,
+        ),
+        summary=models.TextField(
+            _('summary'),
+            blank=True,
+            default='',
+        ),
+        image=FilerImageField(
+            null=True,
+            blank=True,
+        ),
+        link=models.URLField(
+            _('link'),
+            blank=True,
+            default='',
         ),
         meta={'unique_together': (('language_code', 'slug', ), )}
     )

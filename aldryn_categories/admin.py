@@ -18,6 +18,9 @@ class CategoryAdmin(TranslatableAdmin, TreeAdmin):
             'fields': (
                 'name',
                 'slug',
+                'summary',
+                'image',
+                'link',
             )
         }),
         (' ', {
