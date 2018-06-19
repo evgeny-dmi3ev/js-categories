@@ -9,9 +9,9 @@ from aldryn_categories import __version__
 # python setup.py bdist_wheel upload
 
 setup(
-    name='aldryn-categories',
+    name='js-categories',
     version=__version__,
-    url='https://github.com/aldryn/aldryn-categories',
+    url='https://github.com/compoundpartners/js-categories',
     license='BSD License',
     description='Hierarchical categories/taxonomies for your Django project',
     author='Divio AG',

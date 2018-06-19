@@ -1,5 +1,5 @@
 {
-    "package-name": "aldryn-categories",
+    "package-name": "js-categories",
     "installed-apps": [
         "aldryn_categories",
         "parler",
