@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
 from django.utils.translation import ugettext
+from django.conf import settings
 
 from parler.admin import TranslatableAdmin
 
@@ -13,16 +14,25 @@ from .models import Category
 class CategoryAdmin(TranslatableAdmin, TreeAdmin):
     form = CategoryAdminForm
 
+    main_fields = (
+        'name',
+        'slug',
+    )
+    if not getattr(settings, 'CATEGORIES_HIDE_LANDING_PAGE', False):
+        main_fields +=(
+            'landing_page',
+        )
+    main_fields +=(
+        'summary',
+        'image',
+        'link',
+        'no_url',
+    )
+
+
     fieldsets = (
         (None, {
-            'fields': (
-                'name',
-                'slug',
-                'summary',
-                'image',
-                'link',
-                'no_url',
-            )
+            'fields': main_fields
         }),
         (' ', {
             'fields': (

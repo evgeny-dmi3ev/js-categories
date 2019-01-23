@@ -74,6 +74,12 @@ class Category(TranslatedAutoSlugifyMixin, TranslationHelperMixin,
             null=True,
             blank=True,
         ),
+        landing_page=models.CharField(
+            _('landing page'),
+            max_length=255,
+            blank=True,
+            default='',
+        ),
         link=models.URLField(
             _('link'),
             blank=True,
