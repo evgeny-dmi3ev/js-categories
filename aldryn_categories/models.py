@@ -113,5 +113,4 @@ class Category(TranslatedAutoSlugifyMixin, TranslationHelperMixin,
         models.Model.delete(self, **kwargs)
 
     def __str__(self):
-        name = self.safe_translation_getter('name', any_language=True)
-        return escape(name)
+        return self.safe_translation_getter('name', any_language=True)
