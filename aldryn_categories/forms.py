@@ -14,7 +14,7 @@ class PageSmartLinkFieldWithLang(PageSmartLinkField):
         self.language = get_language()
         widget = self.widget(ajax_view=ajax_view)
         widget.language=self.language
-        super(PageSmartLinkField, self).__init__(max_length, min_length,
+        super(PageSmartLinkField, self).__init__(max_length=max_length, min_length=min_length,
                                                  widget=widget, *args, **kwargs)
 
 

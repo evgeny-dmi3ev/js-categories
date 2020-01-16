@@ -71,6 +71,7 @@ class Category(TranslatedAutoSlugifyMixin, TranslationHelperMixin,
             default='',
         ),
         image=FilerImageField(
+            on_delete=models.SET_NULL,
             null=True,
             blank=True,
         ),
